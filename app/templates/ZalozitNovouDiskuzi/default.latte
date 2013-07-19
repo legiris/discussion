@@ -1,0 +1,20 @@
+{block content}
+
+<h2 class="title">Založení nové diskuze</h2>
+<p class="menu">Nacházíte se: <a href="{$basePath}/" title="Zpět na seznam témat">Domů</a>&nbsp;&gt;&nbsp;Založení nové diskuze</p>
+
+<div class="form">
+{form thread}
+	
+	{control $form errors}
+	
+	<table>
+	<tr><td class="center">{label title /}</td><td class="top">{input title size => 45}&nbsp;*</td></tr>
+	<tr><td class="top">{label comment /}</td><td class="top"><textarea name="comment" rows="15" cols="60" id="comment"></textarea>&nbsp;*</td></tr>
+	<tr><td>{input submit}</td><td></td></tr>
+	</table>
+	
+{/form}	
+</div>	<!-- // form -->
+
+{/block}
