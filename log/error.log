@@ -1,0 +1,2 @@
+[2013-09-18 00-27-32] DibiDriverException: Pokus o pøipojení selhal, protože pøipojená strana v èasovém intervalu øádnì neodpovìdìla, nebo vytvoøené pøipojení selhalo, protože neodpovìdìl pøipojený hostitel.
+ in E:\xampp\htdocs\web\forum\sandbox\libs\dibi\drivers\mysqli.php:116  @  http://localhost/web/forum/sandbox/www/thread/default/20  @@  exception-2013-09-18-00-27-32-4151bb6033d06f29cc466b6f17e71eaa.html

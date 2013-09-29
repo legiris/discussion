@@ -3,27 +3,34 @@
 
 <h1 class="title">Seznam témat diskuzního fóra</h1>
 
-<p class="form"><a href="{$basePath}/zalozit-novou-diskuzi/">Založit nové téma</a></p>
+<p class="form"><a href="{plink ZalozitNovouDiskuzi:}">Založit nové téma</a></p>
 
 <div id="middle-page">
 <ul class="table">
   <li>
     <p class="head">
-      <span class="title">Nadpis</span><span class="count">Reakcí</span><span class="date">Poslední reakce</span><span class="since">Založeno</span>
+      <span class="title">Nadpis</span><span class="count">Reakcí</span><span class="date">&nbsp;&nbsp;Poslední reakce</span><span class="since">Založeno</span>
 	</p>
   </li>
 
 </ul>
 
-{foreach $threads as $thread}
-<ul class="table">
-  <li>
-    <p class="thread">
-	<span class="title"><a href="{$basePath}/thread/default/{$thread->id}">{$thread->title}</a></span><span class="count"></span><span class="date"></span><span class="since">{$thread->date}</span>
-	</p>
-  </li>
-</ul>
-{/foreach}
+{if $threads}
+    {foreach $threads as $thread}
+        <ul class="table">
+          <li>
+            <p class="thread">
+                <span class="title"><a href="{$basePath}/thread/default/{$thread->id}">{$thread->title}</a></span>
+                <span class="count">{if (array_key_exists($thread->id, $countComments))} {$countComments[$thread->id]+1} {else} 1 {/if} </span>
+                <span class="date"> {$thread->last_comment} </span>
+                <span class="since">{$thread->date}</span>
+                </p>
+          </li>
+        </ul>
+    {/foreach}
+{else}
+    <p>Dosud nebyla založena žádná diskuze.</p>
+{/if}
 
 </div>	<!-- // middle-page -->
 

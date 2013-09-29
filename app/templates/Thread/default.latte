@@ -1,5 +1,40 @@
 {block content}
+<h2 class="title">{$thread->title}</h2>
 
-<p>thread {$thread->comment}</p>
+<p class="menu">Nacházíte se:&nbsp;<a href="{plink Homepage:}" title="Zpět na seznam témat">Domů</a>&nbsp;&gt;&nbsp;{$thread->title}<br /><br /></p>
 
+<div id="thread-page">
+
+<div class="comment">    
+    <div class="comment-header">
+        <p>(Vložil: {$thread->ip} || {$thread->date})</p>
+    </div>
+    
+    <div class="comment-text">
+        <p>{$thread->comment}</p>
+    </div>
+
+    <div class="comment-footer">
+        <p><a href="{$basePath}/add-comment?threadId={$thread->id}">Vložit příspěvek</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$basePath}/" title="Zpět na seznam témat">Zpět</a></p>
+    </div>
+</div>
+
+{foreach $comments as $comment}
+<div class="comment">
+        <div class="comment-header">
+            <p>(Vložil: {$comment->ip} || {$comment->date})</p>
+        </div>
+
+        <div class="comment-text">
+            {!$comment->text}
+        </div>
+
+        <div class="comment-footer">
+            <p><a href="{$basePath}/add-comment?threadId={$thread->id}&commentId={$comment->id}" title="">Citovat</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$basePath}/add-comment?threadId={$thread->id}" title="Odpovědět na zakládající příspěvek">Vložit příspěvek</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$basePath}/" title="Zpět na seznam témat">Zpět</a></p>
+        </div>
+</div>
+{/foreach}
+
+
+</div>  <!-- ./thread-page -->
 {/block}

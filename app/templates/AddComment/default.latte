@@ -1,0 +1,32 @@
+{block content}
+
+<h2 class="title">Reakce na příspěvek:</h2>
+
+<div class="answer">
+    <div class="comment-header">
+        <p>(Vložil: {$thread->ip} || {$thread->date})</p>
+    </div>
+    
+    <div class="comment-text">
+        <p>{$thread->comment}</p>
+    </div>
+<hr />
+</div>
+
+
+<div class="form">
+{form comment}
+    <table>
+        <tr><td>Autor</td><td>{$ip}</td></tr>
+        <tr><td colspan="2">
+            {ifset $textareaAuthor}
+                <textarea rows="12" cols="80" name="text" id="text">[citace]&#13;&#10;**{$textareaAuthor}** píše:&#13;&#10;{$textareaText}&#13;&#10;[/citace]&#13;&#10;</textarea></td></tr>
+            {else}
+                <textarea rows="12" cols="80" name="text" id="text"></textarea>
+            {/ifset}
+        <tr><td colspan="2">{input add}</td></tr>
+    </table>
+{/form}
+</div>  <!-- ./form -->
+
+{/block}

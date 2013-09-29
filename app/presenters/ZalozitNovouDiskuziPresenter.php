@@ -32,5 +32,4 @@ class ZalozitNovouDiskuziPresenter extends BasePresenter
 		$this->redirect('Homepage:default');	
 	}
 	
-	
 }

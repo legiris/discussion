@@ -1,12 +1,11 @@
 @CHARSET "UTF-8";
 
-html {
+html, p {
 	margin: 0;
 	padding: 0;	
 }
 
 body {
-	/*background-color: #e4ebed;*/
 	background-color: #CFDFEE;
 	font-family: verdana, helvetica, arial, sans-serif;
 	font-size: 90%;
@@ -37,9 +36,18 @@ h2.title {
 	border-radius: 6px;
 }
 
+#page a {
+    text-decoration: none;
+}
+
 #middle-page {
-	background-color: #EEF5FA;
+	/*background-color: #EEF5FA;*/
+        background-color: white;
 	min-height: 1000px;
+}
+
+#thread-page {
+    min-height: 1000px;
 }
 
 p.form {
@@ -73,7 +81,6 @@ ul.table {
 }
 
 ul.table a {
-	/*color: #A2CBF9;*/
 	color: #3E63BB;
 	text-decoration: none;
 }
@@ -88,7 +95,8 @@ ul.table li p.head {
 }
 
 ul.table li p.thread {
-	background-color: rgb(90%,90%,90%);
+	/*background-color: rgb(90%,90%,90%);*/
+        background-color: #ffffe0;
 	padding: 10px 0 10px 20px;
 	margin: 0;
 	font-family: verdana, helvetica, arial, sans-serif;
@@ -144,3 +152,51 @@ div.flash {
 	margin: 1em 0;
 }
 
+
+div.comment {
+    background: white;
+    /*padding: 15px 10px 15px 10px;*/
+    padding: 0;
+    border: 1px solid green;
+    margin-bottom: 10px;
+}
+
+div.comment-header {
+    background: whitesmoke;
+    padding-left: 5px;
+    padding: 5px 0 5px 5px;
+    font-size: 11.5px;
+    /*padding: .5px 10px .5px 10px;*/
+}
+
+div.comment-text {
+    background: white;
+    padding: 10px 10px 10px 10px;
+}
+
+div.comment-footer {
+    /*background: whitesmoke;*/
+    border-top: 1px dotted green;
+    padding: 5px 10px 5px 0;
+    text-align: right;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+div.answer {
+    font-size: 10px;
+}
+
+div.citation {
+    font-size: 10px;
+    border: 1px dotted black;
+    background: rgb(210,210,210);
+    line-height: 2em;
+    margin: 0 0 20px 10px;
+    padding: 0 0 0 20px;
+}
+
+.bf {
+    font-weight: bold;
+}

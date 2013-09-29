@@ -1,0 +1,18 @@
+/* 
+    Document   : test
+    Created on : 29.7.2013, 11:49:24
+    Author     : Admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+div.comment-header { 
+    border-left: 1px solid black;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid yellow;
+}
+
+p {
+    border: 1px solid red;
+    margin: 0px;
+}
