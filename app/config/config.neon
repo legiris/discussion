@@ -5,54 +5,44 @@
 # http://nette.org/security-warning
 #
 common:
-	dibi:
-		driver: mysqli
-		host: localhost
-		username: root
-		password: 
-		database: forum
-		lazy: TRUE
+	parameters:
 
 	php:
 		date.timezone: Europe/Prague
 		# zlib.output_compression: yes
 
+	dibi:
+		drive: mysqli
+		host: 
+		username: 
+		password: 
+		database: 
+		lazy: TRUE
+
 	nette:
 		application:
 			errorPresenter: Error
+
+		#database:
+			#dsn: 'mysql:host=localhost;dbname=test'
+			#user:
+			#password:
 
 		session:
 			expiration: 14 days
 
 
 	services:
-		# authenticator: Authenticator
+		#authenticator: Authenticator
+		baseManager: BaseManager
+		menu: Menu
 		routerFactory: RouterFactory
 		router: @routerFactory::createRouter
-		baseManager: BaseManager
-		thread: Thread
-		comment: Comment
 
 
 	factories:
 
 
 production < common:
-	dibi:
-		driver: mysqli
-		host: localhost
-		database: forum
-		username: root
-		password: 
-		charset: utf8
-		lazy: TRUE
-		
+
 development < common:
-	dibi:
-		driver: mysqli
-		host: localhost
-		database: forum
-		username: root
-		password: 
-		charset: utf8
-		lazy: TRUE
